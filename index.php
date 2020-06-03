@@ -102,9 +102,11 @@ background-image: linear-gradient(90deg, #21D4FD 0%, #B721FF 100%);
 
 "> Country-wise covid-19 cases </h3>
 
+<input class="p-3  text-center w-100" type="text"  placeholder="Enter State Name To Search.."id="Usearch" style="border:3px solid red; border-radius: 4px; font-weight: bold; color: green; font-size: 1.2rem; "  onkeyup="search()" >
+
 		<div class="table-responsive">
 			
-			<table class="table table-striped text-center table-hover  " >
+			<table class="table table-striped text-center table-hover" id="WTable" >
 				<thead >
 				<tr>
 					 <th class="text-capitalize "  style="background-color:white;color:#17A2B8; ">LastUpdateTime</th> 		
@@ -177,5 +179,41 @@ background-image: linear-gradient(90deg, #21D4FD 0%, #B721FF 100%);
 	</div>
 
 
+ <script>
+ 	
+	const  search =() => {
+
+
+	 	let USearch= document.getElementById('Usearch').value.toUpperCase(); 
+	 	// console.log(USearch);
+
+	 	let WTable=document.getElementById('WTable');
+		
+		let  RTable=WTable.getElementsByTagName('tr');
+
+
+		for(var i=1;i<RTable.length;i++)
+		{
+
+		let tabledata=RTable[i].getElementsByTagName('td');
+		// console.log(tabledata);
+
+		if(tabledata)
+			{
+
+				let country=tabledata[1].textContent ||tabledata.innerHTML;
+
+				if(country.toUpperCase().indexOf(USearch) >-1)
+				{
+					RTable[i].style.display="";
+				}else{
+					RTable[i].style.display="none";
+				}
+			}
+		}
+
+
+	}
+ </script>
 </body>
 </html>
