@@ -102,7 +102,7 @@ background-image: linear-gradient(90deg, #21D4FD 0%, #B721FF 100%);
 
 "> Country-wise covid-19 cases </h3>
 
-<input class="p-3  text-center w-100" type="text"  placeholder="Enter State Name To Search.."id="Usearch" style="border:3px solid red; border-radius: 4px; font-weight: bold; color: green; font-size: 1.2rem; "  onkeyup="search()" >
+<input class="p-3  text-center w-100" type="text"  placeholder="Enter Country Name To Search.."id="Usearch" style="border:3px solid red; border-radius: 4px; font-weight: bold; color: green; font-size: 1.2rem; "  onkeyup="search()" >
 
 		<div class="table-responsive">
 			
